@@ -1,6 +1,6 @@
 package com.example.entity;
 
-//import com.example.entity.mapperclass.BaseEntity;
+import com.example.entity.mapperclass.BaseEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
