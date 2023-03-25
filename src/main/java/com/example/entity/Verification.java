@@ -7,6 +7,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
+import java.sql.Timestamp;
 import java.util.List;
 
 @Data
@@ -14,14 +16,15 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "tp_customers") // tp = table product
-public class Customers extends BaseEntity {
+@Table(name = "tp_verification")
+public class Verification extends BaseEntity {
 
-    private long customer_id;
-    private String username;
-    private int number_phone;
-    private String email;
-    private String password;
+   private String verify_identify_number;
+   private String selfie_url;
+   private String verify_driving_license;
+   private String address;
 
+    @OneToOne(mappedBy = "user_id")
+    private Users user;
 
 }

@@ -7,6 +7,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
+import java.sql.Timestamp;
 import java.util.List;
 
 @Data
@@ -14,14 +16,15 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "tp_payment") // tp = table product
-public class Payments extends BaseEntity {
-    private long payment_id;
-    private long customer_id;
-    private String bank;
-    private double price;
-    private double amount;
-    private String status;
+@Table(name = "tp_car")
+public class Car extends BaseEntity {
 
+    private String company;
+    private String type;
+    private String seat;
+    private String plate_number;
+    private String model_year;
 
+    @OneToMany(mappedBy = "car")
+    private List<Booking> bookings;
 }

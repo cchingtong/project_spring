@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-
 import java.time.LocalDateTime;
 
 @MappedSuperclass
@@ -23,6 +22,7 @@ public abstract class BaseEntity {
     private LocalDateTime updatedAt;
 
 
+
     @PrePersist
     protected void onCreate() {
         this.createdAt = LocalDateTime.now();
@@ -36,6 +36,8 @@ public abstract class BaseEntity {
 
 
 
+
+
     public Long getId() {
         return id;
     }
@@ -43,6 +45,7 @@ public abstract class BaseEntity {
     public void setId(Long id) {
         this.id = id;
     }
+
 
     public LocalDateTime getCreatedAt() {
         return createdAt;
@@ -55,6 +58,5 @@ public abstract class BaseEntity {
     public boolean isNew() {
         return this.id == null;
     }
-
 
 }

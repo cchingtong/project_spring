@@ -1,6 +1,6 @@
 package com.example.entity.enums;
 
-public enum GenderEnum {
+public enum  GenderEnum {
 
     MALE("MALE"),
     FEMALE("FEMALE");

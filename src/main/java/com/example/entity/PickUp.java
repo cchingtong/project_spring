@@ -7,18 +7,20 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
+import java.sql.Timestamp;
+import java.util.List;
+
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 @Entity
-@Table(name = "tp_admins")
-public class Admins extends BaseEntity {
+@Table(name = "tp_pickup")
+public class PickUp extends BaseEntity {
 
-    private long admin_id;
-    private long role_id;
-    private String username;
-    private String email;
-    private String address;
+    private String pickup_place;
+
 
 }
+
