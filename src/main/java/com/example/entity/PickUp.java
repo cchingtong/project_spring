@@ -21,6 +21,14 @@ public class PickUp extends BaseEntity {
 
     private String pickup_place;
 
+    @ManyToMany
+    @JoinTable(
+            name = "tp_rent_by_pickup",
+            joinColumns = @JoinColumn(name = "pickup_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "rent_by_id",referencedColumnName = "id")
+
+    ) private List<Rent_By> rent_by ;
+
 
 }
 
