@@ -8,6 +8,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -27,11 +29,17 @@ public class Users extends BaseEntity {
     private String is_verified;
 
     @ManyToOne
-    @JoinColumn(name = "role_id")
+    @JoinColumn(name = "role_id", referencedColumnName = "id")
     private Role role;
 
+    @ManyToMany
+    @JoinTable(
+            name = "tp_user_rent_by",
+            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "rent_by_id", referencedColumnName = "id")
+    ) private List<Users> Users; ;
 
 
-
-
+    @OneToOne(mappedBy = "users")
+    private Verification verification;
 }

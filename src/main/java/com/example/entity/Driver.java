@@ -30,7 +30,6 @@ public class Driver extends BaseEntity{
     private String address;
 
     @OneToMany(mappedBy = "driver")
-    @JoinColumn(name ="")
     private List<Booking> bookings;
 
 }

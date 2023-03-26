@@ -23,7 +23,8 @@ public class Invoice extends BaseEntity {
     private String distance;
     private double total_price;
 
-    @OneToOne(mappedBy = "invoice")
+    @OneToOne
+    @JoinColumn(name = "booking_id", referencedColumnName = "id")
     private Booking booking;
 
 }

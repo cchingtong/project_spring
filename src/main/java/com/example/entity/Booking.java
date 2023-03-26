@@ -22,16 +22,18 @@ public class Booking extends BaseEntity {
     private String Status;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
     private Users user;
 
     @ManyToOne
-    @JoinColumn(name = "car_id")
+    @JoinColumn(name = "car_id", referencedColumnName = "id")
     private Car car;
 
     @ManyToOne
-    @JoinColumn(name = "driver_id")
+    @JoinColumn(name = "driver_id", referencedColumnName = "id")
     private Driver driver;
 
+    @OneToOne(mappedBy = "booking")
+    private Invoice invoice;
 
 }

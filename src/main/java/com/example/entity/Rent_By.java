@@ -24,9 +24,8 @@ public class Rent_By extends BaseEntity {
         private Timestamp return_date;
         private double total_price;
 
-
-
-
+        @ManyToMany(mappedBy = "Users")
+        private List<Users> users;
 
 
 }

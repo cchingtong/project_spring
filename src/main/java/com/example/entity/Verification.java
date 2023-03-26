@@ -24,7 +24,8 @@ public class Verification extends BaseEntity {
    private String verify_driving_license;
    private String address;
 
-    @OneToOne(mappedBy = "user_id")
-    private Users user;
+    @OneToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private Users users;
 
 }
