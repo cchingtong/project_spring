@@ -11,8 +11,8 @@ import lombok.NoArgsConstructor;
 import java.sql.Timestamp;
 import java.util.List;
 
-@Data
-@Builder
+//@Data
+//@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity

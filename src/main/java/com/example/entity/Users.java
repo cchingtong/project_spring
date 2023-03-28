@@ -17,8 +17,9 @@ import java.util.List;
 @Entity
 @Table(name = "tp_users")
 public class Users extends BaseEntity {
-    private String user_fname;
-    private String user_lname;
+    private String first_name;
+    private String last_name;
+//    private String username;
 
     @Enumerated(EnumType.STRING)
     private GenderEnum genderEnum;
