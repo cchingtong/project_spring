@@ -24,5 +24,4 @@ public class Motor extends BaseEntity{
 
 //    @ManyToMany(mappedBy = "MotorRent_By")
 //    private List<MotorRent_By> MotorRent_by;
-
 }
