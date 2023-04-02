@@ -30,8 +30,8 @@ public class Car extends BaseEntity {
 
     @ManyToMany
     @JoinTable(
-            name = "tp_rent_by",
+            name = "tp_CarRent_by",
             joinColumns = @JoinColumn(name = "car_id",referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "rent_by_id",referencedColumnName = "id")
-    ) private List<Rent_By> rent_by ;
+            inverseJoinColumns = @JoinColumn(name = "CarRent_by_id",referencedColumnName = "id")
+    ) private List<CarRent_By> CarRent_by ;
 }

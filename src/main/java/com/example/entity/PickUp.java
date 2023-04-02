@@ -8,7 +8,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
-import java.sql.Timestamp;
 import java.util.List;
 
 @Data
@@ -27,7 +26,15 @@ public class PickUp extends BaseEntity {
             joinColumns = @JoinColumn(name = "pickup_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "rent_by_id",referencedColumnName = "id")
 
-    ) private List<Rent_By> rent_by ;
+    ) private List<CarRent_By> CarRent_by ;
+
+    @ManyToMany
+    @JoinTable(
+            name = "tp_motor_rent_by_pickup",
+            joinColumns = @JoinColumn(name = "pickup_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "motor_rent_by_id",referencedColumnName = "id")
+
+    ) private List<MotorRent_By> MotorRent_by ;
 
 
 }

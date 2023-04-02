@@ -16,20 +16,12 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "tp_rent_by")
-public class Rent_By extends BaseEntity {
+@Table(name = "tp_MotorRent_by_invoice")
+public class MotorRent_invoice extends BaseEntity {
+    private String Deposit;
+    private Double Total_price;
 
-        private Timestamp pickup_date;
-        private String deposit;
-        private Timestamp return_date;
-        private double total_price;
-
-        @ManyToMany(mappedBy = "Users")
-        private List<Users> users;
-
-
-
-
-
-
+    @OneToOne
+    @JoinColumn(name = "motor_rent_id", referencedColumnName = "id")
+    private MotorRent_By motorRent_by;
 }
