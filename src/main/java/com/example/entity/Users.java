@@ -38,7 +38,14 @@ public class Users extends BaseEntity {
             name = "tp_user_rent_by",
             joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "rent_by_id", referencedColumnName = "id")
-    ) private List<Users> Users; ;
+    ) private List<CarRent_By> carRentBy;
+
+    @ManyToMany
+    @JoinTable(
+            name = "tp_user_motor_rent_by",
+            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "motor_rent_id", referencedColumnName = "id")
+    ) private List<MotorRent_By> motorRentBy; ;
 
 
     @OneToOne(mappedBy = "users")

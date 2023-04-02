@@ -31,5 +31,4 @@ public class Driver extends BaseEntity{
 
     @OneToMany(mappedBy = "driver")
     private List<Booking> bookings;
-
 }
