@@ -26,10 +26,9 @@ The vehicles rental system offers the following features:
 - View reservations and customer details.
 - Generate reports on rental activity.
 
-### **Technologies Used**
+### **Technologies Used (in processing)**
 
 The vehicle rental system was built using the following technologies:
-
 - MySQL for the database.
 - Intelli J for the coding
 - Front-end and back-end are in processing. (**under discussion with the team**)
