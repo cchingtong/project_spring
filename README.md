@@ -48,7 +48,7 @@ To use the car rental system, follow these steps:
 If you need to modify or cancel your reservation, log in to your account and make the necessary changes.
 
 **Support**
-If you need support with the Rental System, you can create an issue on the GitHub repository or comment on it. 
+If you need support with the Rental System, you can create an issue on the GitHub repository or comment on it. We will try our best.
 
 ### **Conclusion**
 
