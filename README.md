@@ -1,4 +1,4 @@
-The Vehicle Rental System is a software application designed to facilitate the process of renting vehicles to customers. In addition, it serves people who need temporary vehicles. Especially for locals and foreigners who do not have a car while traveling or have a holiday in Cambodia.
+The Vehicle Rental System is a software application designed to facilitate the process of renting vehicles to customers. In addition, it serves people who need temporary vehicles. Especially for locals and foreigners who do not have a vehicle while traveling or have a holiday in Cambodia.
 
 ### **Getting Started**
 
@@ -10,9 +10,9 @@ The vehicles rental system offers the following features:
 
 ### For Customers
 
-- Browse and search for available cars.
-- View car details such as make, model, year, and features.
-- Reserve a car for a specific date and time.
+- Browse and search for available vehicles.
+- View vehicle details such as make, model, year, and features.
+- Reserve a vehicle for a specific date and time.
 - Modify or cancel a reservation.
 - View reservation history.
 - Payment processing depends on whether the location is near or far.
@@ -20,7 +20,7 @@ The vehicles rental system offers the following features:
 ### For Vehicles Rental Company
 
 - Offers two options that allow customers to rent vehicles, which are a taxi or rent vehicles to drive by themselves.
-- Manage car inventory and availability.
+- Manage vehicles inventory and availability.
 - Add, edit, or delete vehicles.
 - Set rental prices and availability schedules.
 - View reservations and customer details.
@@ -36,11 +36,11 @@ The vehicle rental system was built using the following technologies:
 
 ### **How to Use**
 
-To use the car rental system, follow these steps:
+To use the vehicles rental system, follow these steps:
 
-1. Visit the car rental company's website and create an account, if you don't already have one.
+1. Visit the vehicles rental company's website and create an account, if you don't already have one.
 2. Complete the verification.
-3. Browse available cars and select the one you want to rent.
+3. Browse available vehicles and select the one you want to rent.
 4. Choose the rental dates and times.
 5. Provide your personal and payment details to complete the reservation.
 6. Receive a confirmation email with your reservation details.
