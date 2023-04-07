@@ -1,10 +1,9 @@
 package com.example.entity.mapperclass;
 
-import com.example.entity.enums.StatusEnum;
+
 import jakarta.persistence.*;
 import lombok.Data;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
+
 import java.time.LocalDateTime;
 
 @MappedSuperclass
@@ -13,7 +12,7 @@ public abstract class BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private static Long id;
 
     @Column(nullable = false)
     private LocalDateTime createdAt;
@@ -34,11 +33,7 @@ public abstract class BaseEntity {
         this.updatedAt = LocalDateTime.now();
     }
 
-
-
-
-
-    public Long getId() {
+    public static Long getId() {
         return id;
     }
 
@@ -59,4 +54,6 @@ public abstract class BaseEntity {
         return this.id == null;
     }
 
+    public void setCreatedBy(String admin) {
+    }
 }
