@@ -6,7 +6,7 @@ import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import java.time.LocalDateTime;
-
+// update table
 @MappedSuperclass
 @Data
 public abstract class BaseEntity {
