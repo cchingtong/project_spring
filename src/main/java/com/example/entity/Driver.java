@@ -9,7 +9,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
-import java.sql.Timestamp;
 import java.util.List;
 
 @Data
@@ -25,11 +24,10 @@ public class Driver extends BaseEntity{
     @Enumerated(EnumType.STRING)
     private GenderEnum genderEnum;
 
-    private int number_phone;
+    private int phone_number;
     private String identity_card;
     private String address;
 
     @OneToMany(mappedBy = "driver")
     private List<Booking> bookings;
-
 }

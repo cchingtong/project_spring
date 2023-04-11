@@ -8,22 +8,22 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
-
-
+import java.sql.Timestamp;
+import java.util.List;
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "tp_invoice")
-public class Invoice extends BaseEntity {
+@Table(name = "tp_CarRent_by_invoice")
 
-    private String duration;
-    private String distance;
-    private double total_price;
+public class CarRent_invoice extends BaseEntity {
+    private String Deposit;
+    private Double Total_price;
 
     @OneToOne
-    @JoinColumn(name = "booking_id", referencedColumnName = "id")
-    private Booking booking;
+    @JoinColumn(name = "car_rent_id", referencedColumnName = "id")
+    private CarRent_By carRent_by;
+
 
 }

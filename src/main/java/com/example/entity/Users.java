@@ -17,18 +17,17 @@ import java.util.List;
 @Entity
 @Table(name = "tp_users")
 public class Users extends BaseEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private static Long id;
     private String first_name;
     private String last_name;
-//    private String username;
-
-    @Enumerated(EnumType.STRING)
-    private GenderEnum genderEnum;
-
     private int age;
     private int number_phone;
     private String email;
     private String is_verified;
-
+    @Enumerated(EnumType.STRING)
+    private GenderEnum genderEnum;
     @ManyToOne
     @JoinColumn(name = "role_id", referencedColumnName = "id")
     private Role role;
@@ -38,7 +37,14 @@ public class Users extends BaseEntity {
             name = "tp_user_rent_by",
             joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "rent_by_id", referencedColumnName = "id")
-    ) private List<Users> Users; ;
+    ) private List<CarRent_By> carRentBy;
+
+    @ManyToMany
+    @JoinTable(
+            name = "tp_user_motor_rent_by",
+            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "motor_rent_id", referencedColumnName = "id")
+    ) private List<MotorRent_By> motorRentBy; ;
 
 
     @OneToOne(mappedBy = "users")
