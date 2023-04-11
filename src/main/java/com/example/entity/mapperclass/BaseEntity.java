@@ -55,5 +55,6 @@ public abstract class BaseEntity {
     }
 
     public void setCreatedBy(String admin) {
+
     }
 }

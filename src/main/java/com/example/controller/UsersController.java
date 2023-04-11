@@ -9,26 +9,30 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/Users")
-public class UsersRestController {
+public class UsersController {
     private UsersService usersService;
 
     @Autowired
-    public UsersRestController(UsersService usersService){
+    private UsersController(UsersService usersService){
         this.usersService = usersService;
     }
 
     @PostMapping
     public Users add(@RequestBody Users users){
+        //....
         return this.usersService.add(users);
+
     }
 
     @PutMapping
     public Users update(@RequestBody Users users){
+        //...
         return this.usersService.update(users);
     }
 
     @DeleteMapping("{id}")
-    public boolean delete(@PathVariable Long id ){
-        return this.usersService.deleteById(id);
+    public String delete(@PathVariable Long id ){
+        this.usersService.deleteById(id);
+        return "delete user";
     }
 }

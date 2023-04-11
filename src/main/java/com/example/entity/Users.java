@@ -17,17 +17,17 @@ import java.util.List;
 @Entity
 @Table(name = "tp_users")
 public class Users extends BaseEntity {
-    private String user_fname;
-    private String user_lname;
-
-    @Enumerated(EnumType.STRING)
-    private GenderEnum genderEnum;
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private static Long id;
+    private String first_name;
+    private String last_name;
     private int age;
     private int number_phone;
     private String email;
     private String is_verified;
-
+    @Enumerated(EnumType.STRING)
+    private GenderEnum genderEnum;
     @ManyToOne
     @JoinColumn(name = "role_id", referencedColumnName = "id")
     private Role role;

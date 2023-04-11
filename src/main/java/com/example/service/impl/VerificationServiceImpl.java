@@ -5,11 +5,14 @@ import com.example.entity.Verification;
 import com.example.repository.VerificationRepository;
 import com.example.service.VerificationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 
+
+@Service
 public class VerificationServiceImpl implements VerificationService {
 
-    final VerificationRepository verificationRepository;
+    private final VerificationRepository verificationRepository;
     @Autowired
     public VerificationServiceImpl(VerificationRepository verificationRepository) {
         this.verificationRepository = verificationRepository;
@@ -17,8 +20,8 @@ public class VerificationServiceImpl implements VerificationService {
 
     @Override
     public Verification add(Verification verification) {
-        verification.setCreatedBy("Admin");
-        return this.verificationRepository.save(verification);
+        //...
+        return verificationRepository.save(verification);
     }
 
     @Override
@@ -27,7 +30,7 @@ public class VerificationServiceImpl implements VerificationService {
         if (ver == null) {
             return null;
         }
-        return this.verificationRepository.save(ver);
+        return verificationRepository.save(ver);
     }
 
     @Override
@@ -39,4 +42,12 @@ public class VerificationServiceImpl implements VerificationService {
         this.verificationRepository.deleteById(id);
         return true;
     }
+
+    @Override
+    public Verification findById(Long id) {
+        //....
+        return this.verificationRepository.findById(id).orElse(null);
+    }
+
+
 }

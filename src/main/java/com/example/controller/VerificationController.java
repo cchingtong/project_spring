@@ -7,16 +7,17 @@ import com.example.service.VerificationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.swing.plaf.PanelUI;
+
 
 @RestController
 @RequestMapping("/Verification")
-public class VerificationRestController {
+public class VerificationController {
 
     private VerificationService verificationService;
 
     @Autowired
-    public VerificationRestController (VerificationService verificationService){
+    public VerificationController(VerificationService verificationService){
+        //...
         this.verificationService = verificationService;
     }
 
