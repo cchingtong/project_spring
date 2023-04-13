@@ -17,7 +17,8 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Table(name = "tp_booking")
-public class Booking extends BaseEntity {
+public class Booking  extends BaseEntity{
+
     private Timestamp booking_date;
     private String Status;
 

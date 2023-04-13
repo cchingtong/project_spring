@@ -12,7 +12,7 @@ public abstract class BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private static Long id;
+    private Long id;
 
     @Column(nullable = false)
     private LocalDateTime createdAt;
@@ -33,7 +33,7 @@ public abstract class BaseEntity {
         this.updatedAt = LocalDateTime.now();
     }
 
-    public static Long getId() {
+    public Long getId() {
         return id;
     }
 
