@@ -19,7 +19,7 @@ import java.util.List;
 @Table(name = "tp_booking")
 public class Booking extends BaseEntity {
     private Timestamp booking_date;
-    private String Status;
+    //private String Status;
 
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")

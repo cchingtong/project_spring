@@ -9,8 +9,7 @@ import java.time.LocalDateTime;
 // update table
 @MappedSuperclass
 @Data
-public abstract class BaseEntity {
-
+public abstract class   BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -20,8 +19,6 @@ public abstract class BaseEntity {
 
     @Column(nullable = false)
     private LocalDateTime updatedAt;
-
-
 
     @PrePersist
     protected void onCreate() {
@@ -33,9 +30,6 @@ public abstract class BaseEntity {
     protected void onUpdate() {
         this.updatedAt = LocalDateTime.now();
     }
-
-
-
 
 
     public Long getId() {
@@ -59,4 +53,7 @@ public abstract class BaseEntity {
         return this.id == null;
     }
 
+
 }
+
+

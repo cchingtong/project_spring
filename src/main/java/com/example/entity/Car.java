@@ -11,8 +11,8 @@ import lombok.NoArgsConstructor;
 //import java.sql.Timestamp;
 import java.util.List;
 
-//@Data
-//@Builder
+@Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
@@ -30,7 +30,7 @@ public class Car extends BaseEntity {
 
     @ManyToMany
     @JoinTable(
-            name = "tp_CarRent_by",
+            name = "tp_CarR ent_by",
             joinColumns = @JoinColumn(name = "car_id",referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "CarRent_by_id",referencedColumnName = "id")
     ) private List<CarRent_By> CarRent_by ;
