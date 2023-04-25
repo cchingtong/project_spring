@@ -3,15 +3,16 @@ package com.example.service.impl;
 import com.example.entity.Car;
 import com.example.service.CarService;
 import com.example.Repository.CarRepository;
+import com.example.entity.projection.CarProjection;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.ObjectUtils;
 
+
+
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 @Service
 public class CarServiceImpl implements CarService{
@@ -23,10 +24,11 @@ public class CarServiceImpl implements CarService{
             this.carRepository = carRepository;
         }
 
+
         @Override
-        public List<Car> findAll() {
-            List<Car> cars = new ArrayList<>();
-            carRepository.findAll().forEach(cars::add);
+        public List<CarProjection> findAll() {
+            List<CarProjection> cars = new ArrayList<>();
+            carRepository.findAll().stream().forEach(car -> cars.add((CarProjection) car));
             return cars;
         }
 
@@ -49,8 +51,11 @@ public class CarServiceImpl implements CarService{
     public Car updateCar(Car car) {
         Car carToUpdate = carRepository.findById(car.getId()).orElse(null);
         if(!ObjectUtils.isEmpty(car)){
-            carToUpdate.setCarRent_by(car.getCarRent_by());
-
+            carToUpdate.setCompany(car.getCompany());
+            carToUpdate.setSeat(car.getSeat());
+            carToUpdate.setType(car.getType());
+            carToUpdate.setPlate_number(car.getPlate_number());
+            carToUpdate.setModel_year(car.getModel_year());
             return carRepository.save(carToUpdate);
         }
         return null;
@@ -59,6 +64,11 @@ public class CarServiceImpl implements CarService{
     @Override
     public Car findById(Long id) {
         return carRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public CarProjection findByName(String name ) {
+        return this.carRepository.findByName(name).orElse(null);
     }
 
 
