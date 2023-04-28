@@ -1,22 +1,26 @@
 package com.example.controller;
 
 import com.example.entity.CarRent_By;
-import com.example.service.impl.CarRent_ByServiceImpl;
 import com.example.service.CarRent_ByService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
+@RestController
+@RequestMapping("/carRent_by")
+
 public class CarRent_ByController {
 
-        private CarRent_ByServiceImpl carRent_byService;
+        private CarRent_ByService carRent_byService;
 
         @Autowired
-        public CarRent_ByController(CarRent_ByServiceImpl carRent_byService){
+        public CarRent_ByController(CarRent_ByService carRent_byService){
             this.carRent_byService = carRent_byService;
         }
 
         @GetMapping("/all")
-        public Iterable<CarRent_By> findAll(){
+        public List<CarRent_By> findAll(){
             return this.carRent_byService.findAll();
         }
 
