@@ -1,6 +1,7 @@
 package com.example.entity;
 
 import com.example.entity.enums.GenderEnum;
+
 import com.example.entity.mapperclass.BaseEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -16,14 +17,14 @@ import java.util.List;
 @Builder
 @Entity
 @Table(name = "tp_users")
-public class Users extends BaseEntity {
+public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private static Long id;
+    private Long id;
     private String first_name;
     private String last_name;
     private int age;
-    private int number_phone;
+    private String phone_number;
     private String email;
     private String is_verified;
     @Enumerated(EnumType.STRING)
@@ -49,4 +50,7 @@ public class Users extends BaseEntity {
 
     @OneToOne(mappedBy = "users")
     private Verification verification;
+
+
+
 }

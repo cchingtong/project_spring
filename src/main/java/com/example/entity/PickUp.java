@@ -1,6 +1,8 @@
 package com.example.entity;
 
+import com.example.entity.MotorRent_By;
 import com.example.entity.mapperclass.BaseEntity;
+import com.example.entity.CarRent_By;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

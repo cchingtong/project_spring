@@ -2,6 +2,7 @@ package com.example.entity;
 
 import com.example.entity.mapperclass.BaseEntity;
 import com.example.entity.enums.GenderEnum;
+import com.example.entity.Booking;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

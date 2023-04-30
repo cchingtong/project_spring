@@ -1,6 +1,7 @@
 package com.example.entity;
 
 import com.example.entity.mapperclass.BaseEntity;
+import com.example.entity.Users;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

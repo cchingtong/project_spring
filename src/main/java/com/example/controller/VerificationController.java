@@ -3,6 +3,7 @@ package com.example.controller;
 
 
 import com.example.entity.Verification;
+import com.example.entity.projection.VerificationProjection;
 import com.example.service.VerificationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -13,11 +14,10 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/Verification")
 public class VerificationController {
 
-    private VerificationService verificationService;
+    final VerificationService verificationService;
 
     @Autowired
     public VerificationController(VerificationService verificationService){
-        //...
         this.verificationService = verificationService;
     }
 
@@ -33,6 +33,11 @@ public class VerificationController {
 
     @DeleteMapping("{id}")
     public boolean delete(@PathVariable Long id){
-        return this.verificationService.deleteById(id);
+        return this.verificationService.delete(id);
+    }
+
+    @GetMapping("/{id}")
+    public VerificationProjection findBy(@PathVariable Long id){
+        return this.verificationService.findVerificationProjectionById(id);
     }
 }
