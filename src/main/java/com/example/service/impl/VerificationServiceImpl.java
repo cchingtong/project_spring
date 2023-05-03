@@ -28,15 +28,20 @@ public class VerificationServiceImpl implements VerificationService {
 
     @Override
     public Verification add(Verification verification) {
-        return this.verificationRepository.save(verification);
+        Verification ver = new Verification();
+        ver.setVerify_identify_number(verification.getVerify_identify_number());
+        ver.setSelfie_url((ver.getSelfie_url()));
+        ver.setVerify_driving_license(ver.getVerify_driving_license());
+        ver.setAddress(verification.getAddress());
+        return verificationRepository.save(verification);
     }
-
     @Override
     public Verification update(Verification verification) {
-        Verification ver = this.verificationRepository.findById(verification.getId()).orElse(null);
-        if (ver == null) {
-            return null;
-        }
+        Verification ver = verificationRepository.findById(verification.getId())
+                .orElseThrow(() -> new NotFoundException(
+                        ApiStatus.NOT_FOUND.getCode(),
+                        ApiStatus.NOT_FOUND.getMessage()
+                ));
         ver.setVerify_identify_number(verification.getVerify_identify_number());
         ver.setSelfie_url((ver.getSelfie_url()));
         ver.setVerify_driving_license(ver.getVerify_driving_license());
@@ -65,7 +70,7 @@ public class VerificationServiceImpl implements VerificationService {
     public VerificationProjection findVerificationProjectionById(Long id) {
         return this.verificationRepository.findVerificationProjectionById(id);
     }
-
+    @Override
     public List<VerificationProjection>  findVerificationProjectionAll(Pagination pagination){
         Page<VerificationProjection> ver = verificationRepository.findAllVerificationProjectionBy(
                 PageRequest.of(pagination.getPage()-1, pagination.getSize())
