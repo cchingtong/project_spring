@@ -61,4 +61,9 @@ public class BookingServiceImpl implements BookingService {
         return bookingRepository.findById(id).orElse(null);
     }
 
+    @Override
+    public Booking findByName(String name) {
+        return null;
+    }
+
 }
